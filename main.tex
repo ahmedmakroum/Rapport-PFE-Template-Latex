@@ -1,0 +1,251 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+% Packages nécessaires
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{setspace}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{pgfgantt}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{titlesec}
+\usetikzlibrary{positioning,shapes,arrows}
+
+% Rendre la police plus grasse globalement
+\usepackage{lmodern}
+\renewcommand{\rmdefault}{lmss}  % Police sans-serif plus visible
+\renewcommand{\familydefault}{\sfdefault}  % Police par défaut plus grasse
+
+% Configuration de la page
+\geometry{left=2.5cm,right=2cm,top=2cm,bottom=2cm}
+\setlength{\headheight}{15pt}
+\setstretch{1.3}
+
+% Configuration des en-têtes et pieds de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+% Configuration des liens hypertexte
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black
+}
+
+% Configuration pour les listings de code
+\lstset{
+    backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{green!50!black},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    tabsize=2
+}
+
+% Define additional languages for listings
+\lstdefinelanguage{javascript}{
+    keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with, const, let, class, extends, export, import, super},
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    keywordstyle=\color{blue}\bfseries,
+    ndkeywordstyle=\color{darkgray}\bfseries,
+    identifierstyle=\color{black},
+    commentstyle=\color{purple}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    sensitive=true
+}
+
+\lstdefinelanguage{yaml}{
+    keywords={true, false, null},
+    keywordstyle=\color{blue}\bfseries,
+    basicstyle=\ttfamily,
+    sensitive=false,
+    comment=[l]{\#},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{purple}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    moredelim=[l][\color{orange}]{\&},
+    moredelim=[l][\color{magenta}]{*},
+    moredelim=**[il][\color{green!50!black}]{:\ }{\ },
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstdefinelanguage{hcl}{
+    keywords={resource, variable, output, provider, data, module, locals, terraform},
+    keywordstyle=\color{blue}\bfseries,
+    basicstyle=\ttfamily,
+    sensitive=true,
+    comment=[l]{\#},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{purple}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+    morestring=[b]"
+}
+
+% Helper commands for YAML
+\newcommand\YAMLcolonstyle{\color{red}\mdseries}
+\newcommand\YAMLkeystyle{\color{black}\bfseries}
+\newcommand\YAMLvaluestyle{\color{blue}\mdseries}
+\newcommand\ProcessThreeDashes{\llap{\color{cyan}\mdseries-{-}-}}
+
+% Définition des informations du document
+\newcommand{\titre}{Mise en place d'une Infrastructure de Données Multi-sources avec Plateforme de Visualisation et Business Intelligence}
+\newcommand{\auteur}{MAKROUM Ahmed}
+\newcommand{\etablissement}{École Marocaine des Sciences de l'Ingénieur}
+\newcommand{\organisme}{Allianz}
+\newcommand{\annee}{2024-2025}
+\newcommand{\encadrant}{Mr name}
+\newcommand{\maitre}{Mr name}
+
+% Formatage des titres de chapitre
+\usepackage{titlesec}
+
+% S'assurer que "Chapitre" est utilisé au lieu de "Chapter"
+\addto\captionsfrench{%
+  \renewcommand\chaptername{Chapitre}%
+  \renewcommand\contentsname{Table des matières}%
+  \renewcommand\listfigurename{Liste des figures}%
+  \renewcommand\listtablename{Liste des tableaux}%
+  \renewcommand\bibname{Bibliographie}%
+}
+
+% Configuration de la numérotation des sections (1, 2, 3 au lieu de 1.1, 1.2, 1.3)
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}
+  {\chaptertitlename\ \thechapter}
+  {20pt}
+  {\Huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{40pt}
+
+% S'assurer que les chapitres commencent sur de nouvelles pages
+\let\oldchapter\chapter
+\renewcommand{\chapter}{\clearpage\oldchapter}
+
+\begin{document}
+
+% Numérotation romaine majuscule pour les pages préliminaires
+\pagenumbering{Roman}
+
+% Page de garde
+\includepdf[pages=1]{sections/PageGarde.pdf}
+
+% Dédicace
+\input{sections/dedicace}
+
+% Remerciements
+\input{sections/remerciements}
+
+% Résumé
+\input{sections/resume}
+
+% Résumé en arabe (mulakhass)
+%\input{sections/mulakhass}
+
+% Abstract
+\input{sections/abstract}
+
+% Table des matières
+\tableofcontents
+\markboth{Table des matières}{Table des matières}
+\newpage
+
+% Liste des figures
+\listoffigures
+\markboth{Liste des figures}{Liste des figures}
+\newpage
+
+% Liste des tableaux
+\listoftables
+\markboth{Liste des tableaux}{Liste des tableaux}
+\newpage
+
+% Liste des sigles et acronymes
+\input{sections/liste_sigles}
+
+% Passage à la numérotation arabe pour le contenu principal
+\pagenumbering{arabic}
+
+% Réinitialiser les en-têtes et pieds de page pour le contenu principal
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+% Introduction générale
+\input{sections/introduction_generale}
+
+% Restaurer le style de page normal pour les chapitres
+\clearpage
+\pagestyle{fancy}
+\markboth{}{}
+
+% Chapitre 1: Contexte général du projet
+\input{chapters/chapitre1}
+
+% Chapitre 2: Analyse et modélisation
+\input{chapters/chapitre2}
+
+% Chapitre 3: Étude technique
+\input{chapters/chapitre3}
+
+% Chapitre 4: Réalisation et déploiement
+\input{chapters/chapitre4}
+
+% Conclusion générale
+\newpage
+\input{sections/conclusion_generale}
+
+% Bibliographie
+\bibliographystyle{plain}
+\bibliography{references}
+
+% Webographie
+\input{sections/webographie}
+
+% Effacer les en-têtes à la fin du document
+\clearpage
+\pagestyle{empty}
+\markboth{}{}
+
+\end{document}

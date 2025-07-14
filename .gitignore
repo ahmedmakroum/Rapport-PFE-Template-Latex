@@ -1,0 +1,196 @@
+# LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.bbl
+*.blg
+*.idx
+*.ind
+*.ilg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
+*.alg
+*.loa
+*.nav
+*.snm
+*.vrb
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.lzo
+*.nlo
+*.nls
+*.xdy
+*.upa
+*.upb
+*.figlist
+*.makefile
+*.fignums
+*.figaux
+*.eledsec[1-9]
+*.eledsec[1-9]R
+*.eledsec[1-9][0-9]
+*.eledsec[1-9][0-9]R
+*.eledsec[1-9][0-9][0-9]
+*.eledsec[1-9][0-9][0-9]R
+
+# LaTeX intermediate files
+*.auxlock
+*.bcf
+*.run.xml
+*.fot
+*.cb
+*.cb2
+*.lb
+*.soc
+*.cut
+*.cpt
+*.xyc
+*.pytxcode
+pythontex-files-*/
+*.figlist
+*.makefile
+*.fls
+*.fdb_latexmk
+*.dpth
+*.md5
+*.auxlock
+
+# Beamer
+*.nav
+*.pre
+*.snm
+*.vrb
+
+# Nomenclatures
+*.nlg
+*.nlo
+*.nls
+
+# Glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+# BibTeX
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# Build directories
+build/
+output/
+_build/
+dist/
+
+# Editor files
+.vscode/settings.json
+.vscode/launch.json
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+*~
+
+# Archive files
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.tar.bz2
+
+# PowerShell files (keep the compile script but ignore logs)
+*.ps1.log
+
+# Keep these files
+!compile.ps1
+!Makefile
+!*.tex
+!*.bib
+!*.md
+!images/
+!chapters/
+!sections/
+
+# Ignore compiled PDF (comment this line if you want to track the PDF)
+# main.pdf
+
+# Latexmk files
+.latexmkrc
+*latexmk
+
+# SyncTeX
+*.synctex.gz(busy)
+
+# KBibTeX
+*~[0-9]*
+
+# Auto-generated tag files
+*.tag
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Python (if using pythontex or similar)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Node.js (if using any JS tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary directories
+temp/
+tmp/
+.temp/
+.tmp/

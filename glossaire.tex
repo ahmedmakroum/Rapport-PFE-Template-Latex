@@ -1,0 +1,96 @@
+% Glossaire et acronymes
+% Ajoutez ce contenu dans votre préambule si vous souhaitez utiliser un glossaire
+
+% Packages nécessaires (à ajouter dans le préambule)
+% \usepackage[acronym,toc]{glossaries}
+% \makeglossaries
+
+% Définition des acronymes
+\newacronym{api}{API}{Application Programming Interface}
+\newacronym{rest}{REST}{Representational State Transfer}
+\newacronym{crud}{CRUD}{Create, Read, Update, Delete}
+\newacronym{sql}{SQL}{Structured Query Language}
+\newacronym{nosql}{NoSQL}{Not Only SQL}
+\newacronym{json}{JSON}{JavaScript Object Notation}
+\newacronym{xml}{XML}{eXtensible Markup Language}
+\newacronym{html}{HTML}{HyperText Markup Language}
+\newacronym{css}{CSS}{Cascading Style Sheets}
+\newacronym{js}{JS}{JavaScript}
+\newacronym{ui}{UI}{User Interface}
+\newacronym{ux}{UX}{User Experience}
+\newacronym{mvc}{MVC}{Model-View-Controller}
+\newacronym{orm}{ORM}{Object-Relational Mapping}
+\newacronym{ci}{CI}{Continuous Integration}
+\newacronym{cd}{CD}{Continuous Deployment}
+\newacronym{devops}{DevOps}{Development Operations}
+\newacronym{aws}{AWS}{Amazon Web Services}
+\newacronym{gcp}{GCP}{Google Cloud Platform}
+\newacronym{iot}{IoT}{Internet of Things}
+\newacronym{ai}{AI}{Artificial Intelligence}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{dl}{DL}{Deep Learning}
+\newacronym{bi}{BI}{Business Intelligence}
+\newacronym{etl}{ETL}{Extract, Transform, Load}
+\newacronym{olap}{OLAP}{Online Analytical Processing}
+\newacronym{oltp}{OLTP}{Online Transaction Processing}
+\newacronym{kpi}{KPI}{Key Performance Indicator}
+\newacronym{sla}{SLA}{Service Level Agreement}
+\newacronym{roi}{ROI}{Return on Investment}
+\newacronym{crm}{CRM}{Customer Relationship Management}
+\newacronym{erp}{ERP}{Enterprise Resource Planning}
+\newacronym{scm}{SCM}{Supply Chain Management}
+\newacronym{hr}{HR}{Human Resources}
+\newacronym{it}{IT}{Information Technology}
+\newacronym{pfe}{PFE}{Projet de Fin d'Études}
+
+% Définition des termes du glossaire
+\newglossaryentry{microservice}{
+    name=microservice,
+    description={Architecture où une application est construite comme un ensemble de services faiblement couplés}
+}
+
+\newglossaryentry{conteneur}{
+    name=conteneur,
+    description={Unité standard de logiciel qui empaquette le code et toutes ses dépendances}
+}
+
+\newglossaryentry{pipeline}{
+    name=pipeline,
+    description={Séquence automatisée de processus de développement logiciel}
+}
+
+\newglossaryentry{dashboard}{
+    name=dashboard,
+    description={Interface utilisateur qui fournit des vues d'ensemble des métriques et indicateurs clés}
+}
+
+\newglossaryentry{scalabilite}{
+    name=scalabilité,
+    description={Capacité d'un système à gérer une charge croissante en ajoutant des ressources}
+}
+
+\newglossaryentry{resilience}{
+    name=résilience,
+    description={Capacité d'un système à continuer de fonctionner en cas de défaillance}
+}
+
+\newglossaryentry{observabilite}{
+    name=observabilité,
+    description={Mesure de la facilité avec laquelle l'état interne d'un système peut être inféré}
+}
+
+\newglossaryentry{agilite}{
+    name=agilité,
+    description={Méthodologie de développement itérative et collaborative}
+}
+
+% Usage dans le document :
+% \gls{api} pour la première occurrence (forme complète)
+% \gls{api} pour les occurrences suivantes (forme courte)
+% \glspl{api} pour le pluriel
+% \Gls{api} pour débuter une phrase
+% \glsreset{api} pour réinitialiser un acronyme
+
+% Pour imprimer le glossaire dans le document :
+% \printglossary[type=\acronymtype,title=Liste des acronymes]
+% \printglossary[title=Glossaire]
